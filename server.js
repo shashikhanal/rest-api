@@ -1,0 +1,1 @@
+var express = require('express');var app = express();var bodyParser = require('body-parser');var port = process.env.PORT || 8080;var router = express.Router();require('./routes.js')(router);app.use(bodyParser.urlencoded({ extended: true }));app.use(bodyParser.json());app.use('/api', router);app.listen(port, function(){	console.log("Server listening on ", port)});
